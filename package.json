@@ -1,0 +1,1 @@
+{ "name": "emergency-routing", "version": "1.0.0", "description": "Capability-aware, load-aware emergency hospital recommendation (microservices)", "scripts": { "start": "node start-all.js" }, "engines": { "node": ">=18" } }

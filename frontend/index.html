@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareRoute: fastest route to the right hospital</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="nav"><a class="brand" href="/">CareRoute</a>
+  <nav><a href="#how">How it works</a><a href="/login" id="navLogin">Log in</a><a class="btn primary" href="/signup" id="navCta">Sign up</a></nav></header>
+<section class="hero">
+  <div><h1>Nearest is not always fastest to treatment.</h1>
+    <p>CareRoute ranks hospitals by travel time plus expected wait, and only among hospitals that have the equipment your emergency needs. Then it shows the route on a map.</p>
+    <div class="cta"><a class="btn primary" href="/signup" id="heroCta">Create free account</a><a class="btn" href="/login">Log in</a></div></div>
+  <div class="compare" aria-label="Example comparison"><h2>Cardiac case in Saket, example</h2>
+    <div class="row"><b><span>Nearest hospital</span><span>no cath lab: ruled out</span></b></div>
+    <div class="row"><b><span>Hospital A</span><span>7 min</span></b><div class="bar" style="width:20%"><span class="t" style="flex:2"></span><span class="w" style="flex:5"></span></div></div>
+    <div class="row"><b><span>Hospital B</span><span>17 min</span></b><div class="bar" style="width:50%"><span class="t" style="flex:16"></span><span class="w" style="flex:1"></span></div></div>
+    <div class="legend"><span><i style="background:var(--travel)"></i>Travel</span><span><i style="background:var(--wait)"></i>Wait</span></div></div>
+</section>
+<section class="features" id="how">
+  <div><h3>Capability first</h3><p>Cardiac, stroke, trauma and general cases each need specific facilities. Hospitals missing them are removed before ranking.</p></div>
+  <div><h3>Time to treatment</h3><p>Travel time and expected ER wait are added together, so a quiet hospital can beat a closer, crowded one.</p></div>
+  <div><h3>Route on the map</h3><p>See the recommended hospital, the road route and turn-by-turn directions, and re-rank when conditions change.</p></div>
+</section>
+<footer class="footer">Prototype for a final-year project. Hospital data is simulated. In a real emergency call 112.</footer>
+<script>if(localStorage.getItem('token')){navLogin.textContent='Open dashboard';navLogin.href='/app';navCta.hidden=true;heroCta.textContent='Open dashboard';heroCta.href='/app'}</script>
+</body></html>

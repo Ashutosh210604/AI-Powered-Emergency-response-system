@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | CareRoute</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="nav"><a class="brand" href="/">CareRoute</a>
+  <nav><span class="who" id="who"></span><button class="btn" id="logout" type="button">Log out</button></nav></header>
+<main class="layout">
+  <section class="panel" aria-label="Emergency details">
+    <fieldset><legend>Describe the situation (AI triage)</legend>
+      <textarea id="symptoms" rows="4" maxlength="1000" placeholder="Example: 58 year old man, chest pain spreading to left arm, sweating"></textarea>
+      <button class="btn primary" id="analyse" type="button">Analyse with AI</button>
+      <div id="aiResult" class="airesult" aria-live="polite"></div></fieldset>
+    <fieldset><legend>Emergency type</legend><div class="types" id="types"></div></fieldset>
+    <label for="loc">Patient location</label><select id="loc"></select>
+    <button class="ghost" id="gps" type="button">Use my current location</button>
+    <p class="hint">You can also click the map or drag the red pin.</p>
+    <fieldset class="sim"><legend>Simulate changing conditions</legend>
+      <label for="traffic">Traffic: <output id="trafficOut">normal</output></label>
+      <input type="range" id="traffic" min="1" max="3" step="0.5" value="1">
+      <label for="hosp">Hospital</label><select id="hosp"></select>
+      <label for="occ">Occupancy: <output id="occOut"></output></label>
+      <input type="range" id="occ" min="0.2" max="1" step="0.05" value="0.5"></fieldset>
+  </section>
+  <section class="results" aria-live="polite">
+    <div id="map" role="application" aria-label="Map of patient, hospitals and route"></div>
+    <div id="warning" class="warning" hidden></div>
+    <div id="clinic" class="clinic" hidden></div>
+    <div id="route" class="route" hidden></div>
+    <div class="aibox"><button class="btn" id="explainBtn" type="button">Explain this recommendation</button><p id="explain" class="explain" aria-live="polite"></p></div>
+    <p class="hint">Select a hospital below to draw its route.</p>
+    <ol id="list" class="list"></ol>
+    <details id="excludedBox" hidden><summary>Hospitals ruled out for this emergency</summary><ul id="excluded"></ul></details>
+    <p class="foot" id="modelInfo"></p>
+    <p class="foot">Ranking uses modelled traffic and simulated hospital data. Map routes come from OpenStreetMap data via the public OSRM service and do not include live traffic. In a real emergency call 112.</p>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="/app.js"></script></body></html>

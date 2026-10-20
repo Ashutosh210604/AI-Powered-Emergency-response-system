@@ -1,0 +1,10 @@
+[
+  {
+    "id": "fd672e87-a739-45e6-b1f6-f0a919bcea7e",
+    "name": "ashutosh",
+    "email": "a@gmail.com",
+    "role": "citizen",
+    "salt": "35f17da5ce4474ec4107c5764fd69c00",
+    "hash": "124ac08f94fe862788c8be182aebae44236cf40f008eca36549c041615f9da62b4f327ba2c5d7a69cdb0b69befc5cdfa04b418d22cf87111a4367f7c4b228c16"
+  }
+]
